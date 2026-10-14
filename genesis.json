@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "name": "cli-case-check",
+  "description": "Tiny offline text case converter. Returns upper and lower case versions of the input text.",
+  "entry": "src/index.js",
+  "input": {
+    "text": {
+      "type": "string",
+      "label": "Text",
+      "max": 2000,
+      "optional": false,
+      "default": ""
+    }
+  },
+  "network": [],
+  "timeoutMs": 3000,
+  "tests": [
+    {
+      "name": "Empty text",
+      "input": {
+        "text": ""
+      },
+      "expect": {
+        "upper": "",
+        "lower": ""
+      }
+    },
+    {
+      "name": "Hello Genesis",
+      "input": {
+        "text": "Hello Genesis"
+      },
+      "expect": {
+        "upper": "HELLO GENESIS",
+        "lower": "hello genesis"
+      }
+    }
+  ],
+  "verify": "genesis-verify-ec0bf168cc90c94c167d8e37956e6e72"
+}
